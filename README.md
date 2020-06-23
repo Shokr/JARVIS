@@ -1,4 +1,8 @@
 # JARVIS
+
+![JARVIS](https://github.com/Shokr/JARVIS/workflows/JARVIS/badge.svg)
+
+
 Control windows programs with your voice.
 
 
