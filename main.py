@@ -1,26 +1,32 @@
-
-__author__  = 'Mohammed Shokr <mohammedshokr2014@gmail.com>'
-__version__ = 'v 0.1'
-
 """
 JARVIS:
-- Control windows programs with your voice
+- Control Windows programs with your voice
+
+__author__ = 'Muhammed Shokr <mohammedshokr2014@gmail.com>'
+__version__ = 'v 1.0'
 
 JARVIS repo <https://github.com/Shokr/JARVIS>
 """
 
 # import modules
-from datetime import datetime          # datetime module supplies classes for manipulating dates and times
-import subprocess                      # subprocess module allows you to spawn new processes
 
-import speech_recognition as sr        # speech_recognition Library for performing speech recognition with support for Google Speech Recognition, etc..
+# subprocess module allows you to spawn new processes
+import subprocess
 
+# speech_recognition Library for performing speech recognition with support for Google Speech Recognition
+import speech_recognition as sr
 
+# importing the pyttsx3 library
+import pyttsx3
+
+# initialisation
+engine = pyttsx3.init()
 
 # obtain audio from the microphone
 r = sr.Recognizer()
 with sr.Microphone() as source:
-    print("Say something!")
+    engine.say("Say something")
+    engine.runAndWait()
     audio = r.listen(source)
 
 # recognize speech using Google Speech Recognition
@@ -29,27 +35,28 @@ print(Query)
 
 
 # Run Application with Voice Command Function
-def get_app(Q):
-    if Q == "time":
-        print(datetime.now())
-    elif Q == "notepad":
-        subprocess.call(['Notepad.exe'])
-    elif Q == "calculator":
-        subprocess.call(['calc.exe'])
-    elif Q == "stikynot":
-        subprocess.call(['StikyNot.exe'])
-    elif Q == "shell":
-        subprocess.call(['powershell.exe'])
-    elif Q == "paint":
-        subprocess.call(['mspaint.exe'])
-    elif Q == "cmd":
-        subprocess.call(['cmd.exe'])
-    elif Q == "browser":
-        subprocess.call(['C:\Program Files\Internet Explorer\iexplore.exe'])
+def get_app(query):
+    cmd = {
+        'browser': 'C:\Program Files\Internet Explorer\iexplore.exe',
+        'calculator': 'calc.exe',
+        'cmd': 'cmd.exe',
+        'notepad': 'Notepad.exe',
+        'paint': 'mspaint.exe',
+        'shell': 'pwoershell.exe',
+        'stikynot': 'StikyNot.exe',
+    }.get(query.lower())
+    if cmd:
+        subprocess.call([cmd])
     else:
-        print("Sorry ! Try Again")
-    return
+        engine.say("Sorry Try Again")
+        engine.runAndWait()
 
 
-# Call get_app(Query) Func.
-get_app(Query)
+def main():
+
+    # Call get_app(Query) Func.
+    get_app(Query)
+
+
+if __name__ == '__main__':
+    main()
