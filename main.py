@@ -42,7 +42,7 @@ def get_app(query):
         'cmd': 'cmd.exe',
         'notepad': 'Notepad.exe',
         'paint': 'mspaint.exe',
-        'shell': 'pwoershell.exe',
+        'shell': 'powershell.exe',
         'stikynot': 'StikyNot.exe',
     }.get(query.lower())
     if cmd:
