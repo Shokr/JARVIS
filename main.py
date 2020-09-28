@@ -37,13 +37,13 @@ print(Query)
 # Run Application with Voice Command Function
 def get_app(query):
     cmd = {
-        'browser': 'C:\Program Files\Internet Explorer\iexplore.exe',
-        'calculator': 'calc.exe',
-        'cmd': 'cmd.exe',
-        'notepad': 'Notepad.exe',
-        'paint': 'mspaint.exe',
-        'shell': 'powershell.exe',
-        'stikynot': 'StikyNot.exe',
+        "browser": "C:\Program Files\Internet Explorer\iexplore.exe",
+        "calculator": "calc.exe",
+        "cmd": "cmd.exe",
+        "notepad": "Notepad.exe",
+        "paint": "mspaint.exe",
+        "shell": "powershell.exe",
+        "stikynot": "StikyNot.exe",
     }.get(query.lower())
     if cmd:
         subprocess.call([cmd])
@@ -58,5 +58,5 @@ def main():
     get_app(Query)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
