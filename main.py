@@ -7,16 +7,14 @@ __version__ = 'v 1.0'
 
 JARVIS repo <https://github.com/Shokr/JARVIS>
 """
-
 # import modules
-
 # subprocess module allows you to spawn new processes
 import subprocess
 
-# importing the pyttsx3 library
 import pyttsx3
-# speech_recognition Library for performing speech recognition with support for Google Speech Recognition
 import speech_recognition as sr
+# importing the pyttsx3 library
+# speech_recognition Library for performing speech recognition with support for Google Speech Recognition
 
 # initialisation
 engine = pyttsx3.init()
