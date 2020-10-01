@@ -1,6 +1,6 @@
-# JARVIS
+# JARVISE
 
-![JARVIS](https://github.com/Shokr/JARVIS/workflows/JARVIS/badge.svg)
+![JARVISE](https://github.com/Shokr/JARVIS/workflows/JARVISE/badge.svg)
 
 
 Control windows programs with your voice.
@@ -17,5 +17,5 @@ Control windows programs with your voice.
 5. Create a new Pull Request
 
 
-## License
+## License 
 This project is released under MIT license, you are free to use it for personal and commercial projects.
