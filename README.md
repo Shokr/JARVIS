@@ -1,6 +1,6 @@
 # JARVISE
 
-![JARVISE](https://github.com/Shokr/JARVIS/workflows/JARVISE/badge.svg)
+![JARVIS](https://github.com/Shokr/JARVIS/workflows/JARVIS/badge.svg?branch=master)
 
 Control windows programs with your voice.
 
