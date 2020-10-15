@@ -19,6 +19,11 @@ import speech_recognition as sr
 # importing the pyttsx3 library
 import pyttsx3
 
+import wikipedia  #for wikipedia search 
+import smtplib #for sending mails
+
+
+
 # initialisation
 engine = pyttsx3.init()
 
@@ -57,6 +62,42 @@ def main():
     # Call get_app(Query) Func.
     get_app(Query)
 
+def sendmail(to,content):
+    server = smtplib.SMTP('smtp.gmail.com',587)
+    server.ehlo()
+    server.starttls()
+    server.login('example123@gmail.com','Pass@123')
+    server.sendemail('receivermail@gmail.com',to,content)
+    server.close()
 
 if __name__ == '__main__':
     main()
+    while True:
+        query = takecommand().lower()
+        #logic for executing programs
+        if 'wikipedia' in query:
+            speak("searching wikipedia.....")
+            query = query.replace("wikipedia","")
+            results =  wikipedia.summary(query, sentences=5)
+            speak("according to wikipedia")
+            speak(results)
+            
+            
+        elif 'send email' in query:
+            try:
+                speak("what should i say")
+                content = takecommand()
+                speak("wo is receiver, sir")
+                receiver=input("enter receiver email sir")
+                to=receiver
+                sendEmail(to,content)
+                speak(content)
+                speak("email is sent")
+                
+          elif 'go offlie' in query:
+            speak("going offline sir")
+            quit()
+            
+     
+        
+            
