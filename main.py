@@ -94,7 +94,7 @@ if __name__ == '__main__':
                 speak(content)
                 speak("email is sent")
                 
-          elif 'go offlie' in query:
+         elif 'go offlie' in query:
             speak("going offline sir")
             quit()
             
